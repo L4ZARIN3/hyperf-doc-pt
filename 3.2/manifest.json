@@ -1,0 +1,16 @@
+{
+  "name": "Hyperf Documentação (pt-BR)",
+  "short_name": "Hyperf pt-BR",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "150x150",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#3F51B5",
+  "splash_pages": null
+}

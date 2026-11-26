@@ -3,79 +3,227 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Hyperf - Documentação em Português (pt-BR)</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Documentação do framework Hyperf em Português Brasileiro (pt-BR), traduzida integralmente da documentação oficial em chinês (zh-cn).">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentação do Hyperf em Português (pt-BR)</title>
+  <meta name="description" content="Documentação do framework Hyperf traduzida para português brasileiro (pt-BR), organizada por versão.">
+  <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="logo.png">
   <link rel="manifest" href="manifest.json">
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <link rel="shortcut icon" href="favicon.ico" />
-  <link rel="stylesheet" href="//unpkg.com/docsify@4/themes/vue.css">
   <style>
-    .app-name-link img {
-      width: 16%;
+    :root {
+      --indigo: #3F51B5;
+      --indigo-dark: #303F9F;
+      --text: #1f2430;
+      --muted: #5b6472;
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --border: #e4e7f0;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--indigo) 0%, var(--indigo-dark) 100%);
+      color: #fff;
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+
+    header img {
+      width: 92px;
+      height: 92px;
+      object-fit: contain;
+      background: #fff;
+      border-radius: 20px;
+      padding: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .22);
+    }
+
+    header h1 {
+      margin: 20px 0 8px;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+    }
+
+    header p {
+      margin: 0 auto;
+      max-width: 640px;
+      opacity: .92;
+      font-size: 1.02rem;
+    }
+
+    main {
+      max-width: 900px;
+      margin: -28px auto 0;
+      padding: 0 24px 64px;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 26px 26px 10px;
+      box-shadow: 0 12px 30px rgba(31, 36, 48, .06);
+    }
+
+    .panel h2 {
+      margin: 0 0 18px;
+      font-size: 1.15rem;
+      letter-spacing: .01em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .version {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 20px;
+      margin-bottom: 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color .15s, box-shadow .15s, transform .15s;
+    }
+
+    a.version:hover {
+      border-color: var(--indigo);
+      box-shadow: 0 6px 18px rgba(63, 81, 181, .14);
+      transform: translateY(-1px);
+    }
+
+    .version.latest {
+      border-left: 4px solid var(--indigo);
+    }
+
+    .version .number {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--indigo);
+      white-space: nowrap;
+    }
+
+    .version .details {
+      flex: 1 1 260px;
+      min-width: 200px;
+    }
+
+    .version .details strong {
+      display: block;
+      font-size: .98rem;
+    }
+
+    .version .details span {
+      font-size: .88rem;
+      color: var(--muted);
+    }
+
+    .tag {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      background: #e8eaf6;
+      color: var(--indigo-dark);
+      border-radius: 999px;
+      padding: 4px 10px;
+    }
+
+    .tag.soon {
+      background: #eef0f4;
+      color: var(--muted);
+    }
+
+    .version.disabled {
+      opacity: .62;
+      background: #fafbfd;
+    }
+
+    footer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px 48px;
+      color: var(--muted);
+      font-size: .9rem;
+      text-align: center;
+    }
+
+    footer a { color: var(--indigo); }
+
+    .notice {
+      margin-top: 24px;
+      padding: 14px 16px;
+      background: #eef1ff;
+      border: 1px solid #dfe4ff;
+      border-radius: 10px;
+      color: #3a4470;
+      font-size: .9rem;
     }
   </style>
 </head>
 
 <body>
-  <div id="app"></div>
-  <script src="//unpkg.com/docsify@4/lib/docsify.min.js"></script>
-  <script src="//unpkg.com/prismjs/components/prism-php.min.js"></script>
-  <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
-  <script src="//unpkg.com/mermaid@9/dist/mermaid.min.js"></script>
-  <script>
-    mermaid.initialize({ startOnLoad: false });
+  <header>
+    <img src="logo.png" alt="Logo do Hyperf">
+    <h1>Documentação do Hyperf em Português</h1>
+    <p>Tradução comunitária completa (pt-BR), feita a partir da documentação oficial em chinês (zh-cn), organizada por versão do framework.</p>
+  </header>
 
-    window.$docsify = {
-      name: 'Hyperf (pt-BR)',
-      repo: 'L4ZARIN3/hyperf-doc-pt',
-      homepage: 'README.md',
-      loadSidebar: 'summary.md',
-      relativePath: true,
-      themeColor: '#3F51B5',
-      logo: 'logo.png',
-      auto2top: true,
-      subMaxLevel: 4,
-      topMargin: 20,
-      search: {
-        depth: 6,
-        noData: 'Nenhum resultado encontrado!',
-        paths: 'auto',
-        placeholder: 'Digite para pesquisar'
-      },
-      alias: {
-        '/.*/summary.md': '/summary.md',
-        '/utils': '/support',
-      },
-      plugins: [
-        EditOnGithubPlugin.create('https://github.com/L4ZARIN3/hyperf-doc-pt/blob/main/', null, 'Editar no GitHub'),
-      ],
-      plantuml: {
-        skin: 'classic',
-      },
-      markdown: {
-        renderer: {
-          code: function(code, lang) {
-            if (lang === "mermaid") {
-              return ('<div class="mermaid">' + mermaid.render(lang, code) + '</div>');
-            }
-            return this.origin.code.apply(this, arguments);
-          }
-        }
-      }
-    }
-  </script>
-  <script src="//unpkg.com/docsify-copy-code@2/dist/docsify-copy-code.min.js"></script>
-  <script src="//unpkg.com/docsify@4/lib/plugins/search.min.js"></script>
-  <script src="//unpkg.com/docsify-plantuml/dist/docsify-plantuml.min.js"></script>
-  <script src="//unpkg.com/docsify@4/lib/plugins/zoom-image.min.js"></script>
-  <script>
-    if (typeof navigator.serviceWorker !== 'undefined') {
-      navigator.serviceWorker.register('sw.js')
-    }
-  </script>
+  <main>
+    <div class="panel">
+      <h2>Selecione a versão</h2>
+
+      <a class="version latest" href="3.2/">
+        <span class="number">3.2</span>
+        <span class="details">
+          <strong>Hyperf 3.2</strong>
+          <span>Snapshot do branch master de 21/11/2026 (commit d893568) &middot; changelog até v3.2.6</span>
+        </span>
+        <span class="tag">Atual</span>
+      </a>
+
+      <div class="version disabled">
+        <span class="number">3.1</span>
+        <span class="details">
+          <strong>Hyperf 3.1</strong>
+          <span>Ainda não traduzida</span>
+        </span>
+        <span class="tag soon">Em breve</span>
+      </div>
+
+      <div class="version disabled">
+        <span class="number">3.0</span>
+        <span class="details">
+          <strong>Hyperf 3.0</strong>
+          <span>Ainda não traduzida</span>
+        </span>
+        <span class="tag soon">Em breve</span>
+      </div>
+
+      <div class="notice">
+        Apenas a documentação da versão <strong>3.2</strong> foi traduzida até o momento. As versões anteriores podem ser adicionadas sob demanda.
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      <a href="https://github.com/L4ZARIN3/hyperf-doc-pt">Repositório no GitHub</a> &middot;
+      <a href="https://hyperf.wiki">Site oficial do Hyperf</a> &middot;
+      <a href="https://github.com/hyperf/hyperf/tree/master/docs/zh-cn">Documentação original (zh-cn)</a>
+    </p>
+    <p>Tradução comunitária não oficial. Hyperf é um projeto open source licenciado sob a MIT License.</p>
+  </footer>
 </body>
 
 </html>

@@ -1,35 +1,63 @@
-# Apresentação da versão 3.2
+# Hyperf — Documentação em Português (pt-BR)
 
-O Hyperf é um framework PHP de corrotinas progressivo, de alto desempenho e alta flexibilidade, com servidor de corrotinas integrado e uma grande quantidade de componentes comuns. Seu desempenho tem uma melhoria qualitativa em relação aos frameworks tradicionais baseados em `PHP-FPM`; além de oferecer altíssimo desempenho, mantém uma extensibilidade extremamente flexível. Os componentes padrão são todos implementados com base no [padrão PSR](https://www.php-fig.org/psr) e, graças ao poderoso design de injeção de dependência, garantem que a grande maioria dos componentes ou classes seja `substituível` e `reutilizável`.
+Tradução comunitária completa da documentação oficial do [Hyperf](https://hyperf.wiki) para português brasileiro, feita a partir da documentação em chinês (`zh-cn`) — a versão mais completa e atualizada mantida pelo projeto.
 
-Além dos comuns `cliente MySQL` e `cliente Redis` em versão de corrotina, a biblioteca de componentes do framework também preparou para você `Eloquent ORM` em versão de corrotina, `servidor e cliente WebSocket`, `servidor e cliente JSON RPC`, `servidor e cliente gRPC`, `cliente Zipkin/Jaeger (OpenTracing)`, `cliente HTTP Guzzle`, `cliente Elasticsearch`, `cliente Consul`, `cliente ETCD`, `componente AMQP`, `centro de configuração Apollo`, `ACM (Application Configuration Management) da Alibaba Cloud`, `centro de configuração ETCD`, `limitador de taxa baseado no algoritmo de token bucket`, `pool de conexões genérico`, `circuit breaker`, `geração de documentação Swagger`, `mecanismo de views`, `gerador de ID global Snowflake` e outros componentes, poupando você do trabalho de implementar as versões de corrotina correspondentes.
+## Versões disponíveis
 
-O Hyperf também oferece funcionalidades muito práticas, como `contêiner de injeção de dependência baseado em PSR-11`, `anotações`, `programação orientada a aspectos AOP`, `middleware baseado em PSR-15`, `processos personalizados`, `gerenciador de eventos baseado em PSR-14`, `fila de mensagens Redis/RabbitMQ`, `cache automático de modelos`, `cache baseado em PSR-16`, `tarefas agendadas Crontab com precisão de segundos`, `internacionalização`, `validador de formulários Validation`, atendendo a ricos cenários técnicos e de negócios, prontas para uso.
+| Versão | Status | Fonte | Observações |
+| --- | --- | --- | --- |
+| [3.2](3.2/) | ✅ Traduzida | `master` @ `d893568` (21/11/2026) | 123 arquivos Markdown; changelog até **v3.2.6** (14/11/2026) |
+| 3.1 | ⏳ Não traduzida | branch `3.1` | — |
+| 3.0 | ⏳ Não traduzida | branch `3.0` | — |
+| 2.2 | ⏳ Não traduzida | branch `2.2` | — |
+| 2.1 | ⏳ Não traduzida | branch `2.1` | — |
+| 2.0 | ⏳ Não traduzida | branch `2.0` | — |
+| 1.x | ⏳ Não traduzida | branches `1.1` / `1.0` | Docs em `doc/zh-cn` e `doc/zh` |
 
-# Propósito do framework
+> A documentação do Hyperf é versionada por branch no repositório oficial. O branch `master` mantém a documentação da versão **3.2** atualizada (correções e changelog), enquanto branches como `3.1` e `3.0` preservam a documentação de cada série.
 
-Embora o cenário atual dos frameworks desenvolvidos na linguagem PHP seja de disputa entre muitas soluções, ainda não se vê um framework perfeito que concilie um design elegante com altíssimo desempenho, nem um framework que realmente abra caminho para microsserviços em PHP. Esse é o propósito do Hyperf e de sua equipe: continuaremos investindo e nos dedicando a isso, e convidamos você a se juntar a nós para participar da construção do open source.
+## Sobre a tradução da versão 3.2
 
-# Filosofia de design
+- **Versão documentada:** Hyperf **3.2** (a documentação original declara "Apresentação da versão 3.2").
+- **Snapshot de origem:** branch `master` do repositório [hyperf/hyperf](https://github.com/hyperf/hyperf), commit [`d893568`](https://github.com/hyperf/hyperf/commit/d89356856d90102276223062083b9d26bb1324b5), de 21/11/2026.
+- **Changelog incluído:** até **v3.2.6** (14/11/2026).
+- **Arquivos:** 123 arquivos Markdown, além de imagens e assets do site.
 
-`Hyperspeed + Flexibility = Hyperf`: já no nome, adotamos `altíssima velocidade` e `flexibilidade` como os genes do Hyperf.
+O branch `3.2` do repositório oficial está algumas atualizações atrás do `master` (changelog e página de plugins), por isso foi usado o `master`, que é a fonte viva da documentação 3.2.
 
-- Quanto à altíssima velocidade, baseamo-nos nas corrotinas do Swoole e realizamos muitas otimizações no design do framework para garantir a saída de altíssimo desempenho.
-- Quanto à flexibilidade, baseamo-nos no poderoso componente de injeção de dependência do Hyperf; os componentes são implementados com base nos contratos do [padrão PSR](https://www.php-fig.org/psr) e em contratos definidos pelo Hyperf, fazendo com que a grande maioria dos componentes ou classes dentro do framework seja substituível.
+## Estrutura do repositório
 
-Com base nessas características, o Hyperf terá ricas possibilidades, como implementar serviços Web, serviços de gateway, middleware distribuído, arquitetura de microsserviços, servidores de jogos, Internet das Coisas (IOT), entre outros.
+```
+.
+├── index.html          # seletor de versões
+├── 3.2/
+│   ├── index.html      # site Docsify da versão 3.2
+│   ├── README.md       # página inicial da documentação
+│   ├── summary.md      # menu lateral
+│   ├── *.md            # capítulos
+│   ├── changelog/      # registros de versão
+│   ├── db/             # banco de dados
+│   ├── quick-start/    # início rápido
+│   ├── tutorial/       # tutoriais
+│   └── upgrade/        # guias de atualização
+└── ...
+```
 
-# Pronto para produção
+## Visualizar localmente
 
-Fizemos uma grande quantidade de testes unitários nos componentes para garantir a correção da lógica e, ao mesmo tempo, mantemos uma documentação de alta qualidade. Antes de o Hyperf ser oficialmente aberto ao público, ele já havia passado pelo teste severo de ambientes de produção, e só então o abrimos oficialmente. Até hoje, uma grande quantidade de empresas de Internet de grande e médio porte usa o Hyperf em produção.
+```bash
+python3 -m http.server 8080
+# abra http://localhost:8080/
+```
 
----
+Ou publique com GitHub Pages: **Settings → Pages → Deploy from a branch → `main` / `(root)`**.
 
-# Sobre esta tradução
+## Contribuir
 
-Esta é a tradução comunitária da documentação oficial do Hyperf para português brasileiro (pt-BR), feita a partir da documentação em chinês (zh-cn), por ser a versão mais completa e atualizada.
+Correções de tradução, links ou trechos desatualizados são bem-vindos via pull request. Ao traduzir uma nova versão, crie o diretório correspondente (por exemplo, `3.1/`) mantendo a mesma estrutura e adicione o link no seletor de versões.
 
-- Documentação original (zh-cn): https://github.com/hyperf/hyperf/tree/master/docs/zh-cn
-- Site oficial do Hyperf: https://hyperf.wiki
+## Créditos
 
-Caso encontre algum trecho desatualizado ou incorreto, contribuições são bem-vindas por meio de pull requests.
+- Documentação original: [hyperf/hyperf/docs/zh-cn](https://github.com/hyperf/hyperf/tree/master/docs/zh-cn)
+- Site oficial: [hyperf.wiki](https://hyperf.wiki)
+- Hyperf é um projeto open source licenciado sob a MIT License. Esta é uma tradução comunitária não oficial.
