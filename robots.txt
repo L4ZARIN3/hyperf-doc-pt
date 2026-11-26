@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /*?
+
+Sitemap: https://l4zarin3.github.io/hyperf-doc-pt/sitemap.xml

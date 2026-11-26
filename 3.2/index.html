@@ -21,19 +21,45 @@
 
 <body>
   <div id="app"></div>
-  <script src="//unpkg.com/docsify@4/lib/docsify.min.js"></script>
+  <script>
+    // Captura a base ANTES de qualquer mudança de URL (usada depois na config).
+    window.__DOCS_BASE__ = window.location.pathname.replace(/index\.html.*$/, '');
+  </script>
+  <script src="../vendor/docsify.min.js"></script>
+  <script>
+    // Consome o parâmetro ?p= usado pelo 404.html do GitHub Pages (SPA fallback)
+    // e URLs antigas com hash (ex.: #/db/model), reescrevendo para o caminho real
+    // antes do Docsify inicializar (inicialização ocorre no DOMContentLoaded).
+    (function () {
+      var base = window.__DOCS_BASE__;
+      if (window.location.hash.indexOf('#/') === 0) {
+        window.history.replaceState(null, null, base + window.location.hash.slice(2));
+      }
+      var q = new URLSearchParams(window.location.search);
+      if (q.has('p')) {
+        var p = q.get('p');
+        window.history.replaceState(null, null, base + p.replace(/^\//, ''));
+      }
+    })();
+  </script>
   <script src="//unpkg.com/prismjs/components/prism-php.min.js"></script>
   <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
   <script src="//unpkg.com/mermaid@9/dist/mermaid.min.js"></script>
   <script>
     mermaid.initialize({ startOnLoad: false });
 
+    // Base do site: /hyperf-doc-pt/3.2/ no GitHub Pages, /3.2/ localmente
+    var basePath = window.__DOCS_BASE__ || window.location.pathname.replace(/index\.html.*$/, '');
+    var rootLink = basePath.replace(/3\.2\/$/, '');
+
     window.$docsify = {
       name: 'Hyperf 3.2 (pt-BR)',
-      nameLink: '../',
+      nameLink: rootLink,
       repo: 'L4ZARIN3/hyperf-doc-pt',
       homepage: 'README.md',
       loadSidebar: 'summary.md',
+      routerMode: 'history',
+      basePath: basePath,
       themeColor: '#3F51B5',
       logo: 'logo.png',
       auto2top: true,
@@ -44,10 +70,6 @@
         noData: 'Nenhum resultado encontrado!',
         paths: 'auto',
         placeholder: 'Digite para pesquisar'
-      },
-      alias: {
-        '/.*/summary.md': '/summary.md',
-        '/utils': '/support',
       },
       plugins: [
         EditOnGithubPlugin.create('https://github.com/L4ZARIN3/hyperf-doc-pt/blob/main/3.2/', null, 'Editar no GitHub'),
