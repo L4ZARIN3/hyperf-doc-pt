@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hyperf - Documentação em Português (pt-BR)</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Documentação do framework Hyperf em Português Brasileiro (pt-BR), traduzida integralmente da documentação oficial em chinês (zh-cn).">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="stylesheet" href="//unpkg.com/docsify@4/themes/vue.css">
+  <style>
+    .app-name-link img {
+      width: 16%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script src="//unpkg.com/docsify@4/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-php.min.js"></script>
+  <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
+  <script src="//unpkg.com/mermaid@9/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: false });
+
+    window.$docsify = {
+      name: 'Hyperf (pt-BR)',
+      repo: 'L4ZARIN3/hyperf-doc-pt',
+      homepage: 'README.md',
+      loadSidebar: 'summary.md',
+      relativePath: true,
+      themeColor: '#3F51B5',
+      logo: 'logo.png',
+      auto2top: true,
+      subMaxLevel: 4,
+      topMargin: 20,
+      search: {
+        depth: 6,
+        noData: 'Nenhum resultado encontrado!',
+        paths: 'auto',
+        placeholder: 'Digite para pesquisar'
+      },
+      alias: {
+        '/.*/summary.md': '/summary.md',
+        '/utils': '/support',
+      },
+      plugins: [
+        EditOnGithubPlugin.create('https://github.com/L4ZARIN3/hyperf-doc-pt/blob/main/', null, 'Editar no GitHub'),
+      ],
+      plantuml: {
+        skin: 'classic',
+      },
+      markdown: {
+        renderer: {
+          code: function(code, lang) {
+            if (lang === "mermaid") {
+              return ('<div class="mermaid">' + mermaid.render(lang, code) + '</div>');
+            }
+            return this.origin.code.apply(this, arguments);
+          }
+        }
+      }
+    }
+  </script>
+  <script src="//unpkg.com/docsify-copy-code@2/dist/docsify-copy-code.min.js"></script>
+  <script src="//unpkg.com/docsify@4/lib/plugins/search.min.js"></script>
+  <script src="//unpkg.com/docsify-plantuml/dist/docsify-plantuml.min.js"></script>
+  <script src="//unpkg.com/docsify@4/lib/plugins/zoom-image.min.js"></script>
+  <script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('sw.js')
+    }
+  </script>
+</body>
+
+</html>
