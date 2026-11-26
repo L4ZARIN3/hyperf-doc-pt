@@ -55,3 +55,10 @@ Correções de tradução, links ou trechos desatualizados são bem-vindos via p
 - Documentação original: [hyperf/hyperf/docs/zh-cn](https://github.com/hyperf/hyperf/tree/master/docs/zh-cn)
 - Site oficial: [hyperf.wiki](https://hyperf.wiki)
 - Hyperf é um projeto open source licenciado sob a MIT License. Esta é uma tradução comunitária não oficial.
+
+## SEO e indexação
+
+- `robots.txt` — aponta para o sitemap
+- `sitemap.xml` — gerado por `php tools/generate-sitemap.php` (regenere após adicionar páginas)
+- O site usa Docsify em **modo history** (URLs reais, sem `#/`), com fallback SPA via `404.html` para o GitHub Pages servir as subpáginas
+- `vendor/docsify.min.js` — Docsify 4.13.1 com dois patches locais (suporte correto a `basePath` no modo history): os links renderizados incluem a base e o `getFile` não duplica o caminho. Não atualize a versão do Docsify sem reaplicar os patches.
