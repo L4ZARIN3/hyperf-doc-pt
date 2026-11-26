@@ -1,6 +1,6 @@
 # Prefácio do guia
 
-Para ajudar os desenvolvedores a desenvolver componentes para o Hyperf de uma forma melhor e a construir o ecossistema em conjunto, fornecemos este guia para orientar os desenvolvedores no desenvolvimento de componentes. Antes de ler este guia, é necessário que você tenha feito uma leitura **completa** da documentação do Hyperf, especialmente os capítulos [Corrotina](../coroutine.md) e [Injeção de dependência](../di.md); se faltar compreensão suficiente sobre os componentes básicos do Hyperf, poderão ocorrer erros durante o desenvolvimento.
+Para ajudar os desenvolvedores a desenvolver componentes para o Hyperf de uma forma melhor e a construir o ecossistema em conjunto, fornecemos este guia para orientar os desenvolvedores no desenvolvimento de componentes. Antes de ler este guia, é necessário que você tenha feito uma leitura **completa** da documentação do Hyperf, especialmente os capítulos [Corrotina](coroutine.md) e [Injeção de dependência](di.md); se faltar compreensão suficiente sobre os componentes básicos do Hyperf, poderão ocorrer erros durante o desenvolvimento.
 
 # Objetivo do desenvolvimento de componentes
 

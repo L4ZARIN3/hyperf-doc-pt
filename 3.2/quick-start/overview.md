@@ -5,7 +5,7 @@ Para que você entenda mais rapidamente o uso do `Hyperf`, este capítulo usará
 ## Definir rotas de acesso
 
 O Hyperf usa [nikic/fast-route](https://github.com/nikic/FastRoute) como componente de rota padrão e fornece o serviço; você pode definir suas rotas em `config/routes.php` de forma muito prática.   
-Além disso, o framework também oferece o recurso extremamente poderoso, prático e flexível de `rotas por anotação`. Para detalhes sobre rotas, consulte o capítulo [Rotas](../router.md).
+Além disso, o framework também oferece o recurso extremamente poderoso, prático e flexível de `rotas por anotação`. Para detalhes sobre rotas, consulte o capítulo [Rotas](router.md).
 
 ### Definir rotas por arquivo de configuração
 
@@ -35,7 +35,7 @@ Router::addRoute(['GET', 'POST', 'HEAD'], '/multi', [\App\Controller\IndexContro
 
 ### Definir rotas por anotações
 
-O `Hyperf` oferece o recurso de [anotações](../annotation.md) extremamente poderoso, prático e flexível e, sem dúvida, também fornece uma forma de definir rotas por anotação. O Hyperf fornece as anotações `#[Controller]` e `#[AutoController]` para definir um `Controller`. Aqui faremos apenas uma explicação simples; para mais detalhes, consulte o capítulo [Rotas](../router.md).
+O `Hyperf` oferece o recurso de [anotações](annotation.md) extremamente poderoso, prático e flexível e, sem dúvida, também fornece uma forma de definir rotas por anotação. O Hyperf fornece as anotações `#[Controller]` e `#[AutoController]` para definir um `Controller`. Aqui faremos apenas uma explicação simples; para mais detalhes, consulte o capítulo [Rotas](router.md).
 
 ### Definir rotas com a anotação `#[AutoController]`
 
@@ -225,7 +225,7 @@ Como o `Hyperf` é uma aplicação `CLI` persistente, isso significa que, uma ve
 > Dica: você também pode configurar o comando de inicialização do Server na IDE e, assim, concluir rapidamente as operações de `iniciar serviço` ou `reiniciar serviço` diretamente pelas ações `iniciar/parar` da IDE.
 > E, quando não estiver desenvolvendo views, você pode usar [TDD (Test-Driven Development)](https://baike.baidu.com/item/TDD/9064369), desenvolvimento orientado a testes, para desenvolver. Isso não só evita o incômodo de reiniciar o serviço e alternar janelas com frequência, como também garante a correção dos dados da interface.
 
-> Além disso, no capítulo [Biblioteca de componentes de corrotina](../awesome-components.md#hot-updatehot-reload) da documentação, são oferecidas várias soluções de hot update/hot reload suportadas por desenvolvedores da comunidade. Se você ainda deseja adotar uma solução de hot update/hot reload, pode se aprofundar mais.
+> Além disso, no capítulo [Biblioteca de componentes de corrotina](awesome-components.md#hot-updatehot-reload) da documentação, são oferecidas várias soluções de hot update/hot reload suportadas por desenvolvedores da comunidade. Se você ainda deseja adotar uma solução de hot update/hot reload, pode se aprofundar mais.
 
 ## Escuta em múltiplas portas
 

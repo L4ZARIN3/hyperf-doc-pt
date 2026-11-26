@@ -2,7 +2,7 @@
 
 Ao implantar o projeto em um `Cluster Docker`, a coleta de logs costuma ser um problema bastante incômodo, mas a Alibaba Cloud oferece um `sistema de coleta de logs` muito prático. Este documento apresenta brevemente como usar a coleta de logs da Alibaba Cloud.
 
-* [Configuração de cluster Docker Swarm](docker-swarm.md)
+* [Configuração de cluster Docker Swarm](tutorial/docker-swarm.md)
 
 ## Ativando o serviço de log
 

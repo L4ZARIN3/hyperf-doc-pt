@@ -6,7 +6,7 @@ O middleware aqui se refere ao "padrão de middleware", um recurso principal do 
 
 *O middleware é usado principalmente para tecer todo o fluxo de `requisição (Request)` até `resposta (Response)`*; ao organizar vários middlewares, o fluxo dos dados segue a forma que determinamos. O middleware é essencialmente um `modelo de cebola`; vamos explicá-lo com uma figura:
 
-![middleware](middleware.jpg)
+![middleware](middleware/middleware.jpg)
 
 A ordem na figura é organizada como `Middleware 1 -> Middleware 2 -> Middleware 3`. Podemos notar que, quando a linha horizontal do meio atravessa o `núcleo`, ou seja, o `Middleware 3`, ela retorna ao `Middleware 2`, formando um modelo aninhado. Logo, a ordem real é:   
 `Request -> Middleware 1 -> Middleware 2 -> Middleware 3 -> Middleware 2 -> Middleware 1 -> Response`   

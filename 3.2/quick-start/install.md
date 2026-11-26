@@ -6,7 +6,7 @@ O Hyperf tem alguns requisitos de ambiente de sistema. Ao usar o driver de rede 
 
 O projeto [hyperf/hyperf-docker](https://github.com/hyperf/hyperf-docker) já preparou para você Dockerfiles de diversas versões, ou você pode executar diretamente com base na imagem já construída [hyperf/hyperf](https://hub.docker.com/r/hyperf/hyperf).   
 
-Quando você não quiser usar o Docker como base do ambiente de execução, também pode considerar usar o [Box](../eco/box.md) como ambiente base de execução. Se você preferir montar o ambiente por conta própria, precisa garantir que seu ambiente de execução atenda aos seguintes requisitos:   
+Quando você não quiser usar o Docker como base do ambiente de execução, também pode considerar usar o [Box](eco/box.md) como ambiente base de execução. Se você preferir montar o ambiente por conta própria, precisa garantir que seu ambiente de execução atenda aos seguintes requisitos:   
 
  - PHP >= 8.2
  - Qualquer um dos seguintes mecanismos de rede

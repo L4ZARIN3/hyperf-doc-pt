@@ -346,7 +346,7 @@ try{
 
 > O método atual só pode ser usado em ambiente de desenvolvimento; ele deve ser removido antes do deploy em produção, caso contrário causará vazamento de memória grave e confusão de dados.
 
-Para registrar `SQL` em produção, use [escuta de eventos](event.md)
+Para registrar `SQL` em produção, use [escuta de eventos](db/event.md)
 
 ```php
 <?php

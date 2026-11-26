@@ -8,7 +8,7 @@ No `PHP-FPM` é possível obter os parâmetros da requisição, os parâmetros d
 
 ## Classes obtidas pelo contêiner são singletons
 
-Tudo o que é obtido pelo contêiner de injeção de dependência é persistido dentro do processo e compartilhado entre várias corrotinas; portanto, não pode conter dados exclusivos de uma requisição ou de uma corrotina. Esse tipo de dado deve ser tratado pelo contexto da corrotina. Para mais detalhes, leia atentamente os capítulos [Injeção de dependência](../di.md) e [Corrotina](../coroutine.md).
+Tudo o que é obtido pelo contêiner de injeção de dependência é persistido dentro do processo e compartilhado entre várias corrotinas; portanto, não pode conter dados exclusivos de uma requisição ou de uma corrotina. Esse tipo de dado deve ser tratado pelo contexto da corrotina. Para mais detalhes, leia atentamente os capítulos [Injeção de dependência](di.md) e [Corrotina](coroutine.md).
 
 ## Deploy do projeto
 
