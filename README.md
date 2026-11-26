@@ -2,19 +2,13 @@
 
 Tradução comunitária completa da documentação oficial do [Hyperf](https://hyperf.wiki) para português brasileiro, feita a partir da documentação em chinês (`zh-cn`) — a versão mais completa e atualizada mantida pelo projeto.
 
-## Versões disponíveis
+## Versão disponível
 
 | Versão | Status | Fonte | Observações |
 | --- | --- | --- | --- |
 | [3.2](3.2/) | ✅ Traduzida | `master` @ `d893568` (21/11/2026) | 123 arquivos Markdown; changelog até **v3.2.6** (14/11/2026) |
-| 3.1 | ⏳ Não traduzida | branch `3.1` | — |
-| 3.0 | ⏳ Não traduzida | branch `3.0` | — |
-| 2.2 | ⏳ Não traduzida | branch `2.2` | — |
-| 2.1 | ⏳ Não traduzida | branch `2.1` | — |
-| 2.0 | ⏳ Não traduzida | branch `2.0` | — |
-| 1.x | ⏳ Não traduzida | branches `1.1` / `1.0` | Docs em `doc/zh-cn` e `doc/zh` |
 
-> A documentação do Hyperf é versionada por branch no repositório oficial. O branch `master` mantém a documentação da versão **3.2** atualizada (correções e changelog), enquanto branches como `3.1` e `3.0` preservam a documentação de cada série.
+> Apenas a versão **3.2** é mantida neste repositório. No repositório oficial, o branch `master` mantém a documentação da versão 3.2 atualizada (correções e changelog).
 
 ## Sobre a tradução da versão 3.2
 
@@ -54,7 +48,7 @@ Ou publique com GitHub Pages: **Settings → Pages → Deploy from a branch → 
 
 ## Contribuir
 
-Correções de tradução, links ou trechos desatualizados são bem-vindos via pull request. Ao traduzir uma nova versão, crie o diretório correspondente (por exemplo, `3.1/`) mantendo a mesma estrutura e adicione o link no seletor de versões.
+Correções de tradução, links ou trechos desatualizados são bem-vindos via pull request.
 
 ## Créditos
 
